@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.ListActivity;
 import android.content.ContentValues;
+import android.content.Context;
+import android.database.DataSetObserver;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -19,25 +22,35 @@ import android.view.DragEvent;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.WindowInsets;
+import android.widget.ArrayAdapter;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.ScrollView;
+import android.widget.Toast;
 
 import com.google.android.material.slider.RangeSlider;
 
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private DrawView paint;
-    private ImageButton save, undo, stroke;
+    private ImageButton save, undo, stroke, addObj;
     private RangeSlider rangeSlider;
 
-    private LinearLayout objectView;
 
-    private Bitmap[] bitmaps;
+    private ListView listOfItems;
+    public static final List<ObjCanvas> listObjects = new ArrayList<ObjCanvas>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
         save = findViewById(R.id.btn_save);
         undo = findViewById(R.id.btn_undo);
         stroke = findViewById(R.id.btn_stroke);
+        addObj = findViewById(R.id.addObjBut);
         rangeSlider = findViewById(R.id.strokeWidth);
+        listOfItems = (ListView) findViewById(R.id.listOfItems);
 
         undo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +71,27 @@ public class MainActivity extends AppCompatActivity {
                 paint.undo();
             }
         });
+
+        addObj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    Bitmap gettedBitmap = paint.save();
+                    Bitmap bitmap = Bitmap.createScaledBitmap(
+                            gettedBitmap, 100, 100, false);
+                    ObjCanvas obj = new ObjCanvas();
+                    obj.setBitmap(bitmap);
+                    listObjects.add(obj);
+                    ListAdapter adapter = new ObjCanvasAdapter(MainActivity.this, R.layout.list_item, listObjects);
+                    listOfItems.setAdapter(adapter);
+                } catch (Exception e)
+                {
+                    Toast.makeText(MainActivity.this,"Error", Toast.LENGTH_LONG).show();
+                }
+
+            }
+        });
+
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override

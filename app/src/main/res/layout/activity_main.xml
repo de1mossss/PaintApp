@@ -11,9 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/buttons"
-        android:layout_centerInParent="true"
 
-        />
+        android:layout_centerInParent="true" />
 
     <LinearLayout
         android:id="@+id/buttons"
@@ -69,34 +68,44 @@
 
     <LinearLayout
         android:id="@+id/objlayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:divider="@color/white"
+        android:dividerPadding="10dp"
+        android:gravity="bottom|center"
+        android:orientation="vertical"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="80dp">
 
-        <HorizontalScrollView
-            android:id="@+id/objScrollView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/listOfItems"
+            android:layout_width="70dp"
+            android:background="@drawable/custom_obj_button"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="42dp"
+            android:layout_gravity="center"
+            android:scrollbars="none"
+            android:padding="5dp"
+            />
 
-        </HorizontalScrollView>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <ImageButton
             android:id="@+id/addObjBut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@drawable/custom_imgbutton"
             android:backgroundTint="@color/purple_500"
             android:clickable="true"
             android:elevation="8dp"
             android:focusable="true"
             android:src="@drawable/ic_action_name"
-            app:borderWidth="0px"
-            app:fabSize="mini"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            />
     </LinearLayout>
+
+
     
 
 
