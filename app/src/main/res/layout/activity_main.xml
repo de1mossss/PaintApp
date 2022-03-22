@@ -11,49 +11,48 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/buttons"
-
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@+id/objlayout" />
 
     <LinearLayout
         android:id="@+id/buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginEnd="80dp"
         android:layout_marginStart="80dp"
-        android:gravity="center"
         android:layout_marginTop="10dp"
-        >
+        android:layout_marginEnd="80dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <ImageButton
             android:id="@+id/btn_stroke"
             android:layout_width="42dp"
             android:layout_height="42dp"
-            android:background="@drawable/custom_imgbutton"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
-            app:tint="@color/white"
+            android:background="@drawable/custom_imgbutton"
             android:src="@drawable/ic_draw"
-            />
+            app:tint="@color/white" />
+
         <ImageButton
             android:id="@+id/btn_save"
             android:layout_width="42dp"
             android:layout_height="42dp"
-            android:background="@drawable/custom_imgbutton"
-            android:src="@drawable/ic_save"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
-            app:tint="@color/white"
-            />
+            android:background="@drawable/custom_imgbutton"
+            android:src="@drawable/ic_save"
+            app:tint="@color/white" />
+
         <ImageButton
             android:id="@+id/btn_undo"
             android:layout_width="42dp"
             android:layout_height="42dp"
-            android:background="@drawable/custom_imgbutton"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
-            app:tint="@color/white"
+            android:background="@drawable/custom_imgbutton"
             android:src="@drawable/ic_undo"
-            />
+            app:tint="@color/white" />
     </LinearLayout>
 
     <com.google.android.material.slider.RangeSlider
@@ -66,6 +65,17 @@
         android:visibility="gone"
         />
 
+    <ImageButton
+        android:id="@+id/btn_obj"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/custom_imgbutton"
+        android:src="@drawable/ic_open"
+        app:tint="@color/white" />
+
     <LinearLayout
         android:id="@+id/objlayout"
         android:layout_width="70dp"
@@ -76,20 +86,20 @@
         android:gravity="bottom|center"
         android:orientation="vertical"
         android:layout_marginTop="80dp"
-        android:layout_marginBottom="80dp">
+        android:layout_marginBottom="80dp"
+        android:visibility="visible">
 
         <ListView
             android:id="@+id/listOfItems"
             android:layout_width="70dp"
-            android:background="@drawable/custom_obj_button"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="42dp"
             android:layout_gravity="center"
-            android:scrollbars="none"
+            android:layout_marginTop="52dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/custom_list_view"
+            android:orientation="horizontal"
             android:padding="5dp"
-            />
+            android:scrollbars="none" />
 
         <ImageButton
             android:id="@+id/addObjBut"
@@ -100,6 +110,7 @@
             android:clickable="true"
             android:elevation="8dp"
             android:focusable="true"
+            android:layout_marginBottom="10dp"
             android:src="@drawable/ic_action_name"
             app:tint="@color/white"
             />

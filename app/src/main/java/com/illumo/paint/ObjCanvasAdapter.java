@@ -24,7 +24,7 @@ public class ObjCanvasAdapter extends ArrayAdapter<ObjCanvas> {
         BitmapDrawable drawable = new BitmapDrawable(this.getContext().getResources(), obj.getBitmap());
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext())
-                    .inflate(R.layout.list_item, null);
+                    .inflate(R.layout.list_item, null, true);
         }
         ((ImageButton) convertView.findViewById(R.id.imageBut))
                 .setBackgroundDrawable(drawable);

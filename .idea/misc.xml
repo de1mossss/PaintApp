@@ -4,10 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/pashh/AndroidStudioProjects/Paint/app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.2525" />
+        <entry key="..\:/Users/pashh/AndroidStudioProjects/Paint/app/src/main/res/drawable-anydpi/ic_close.xml" value="0.1" />
         <entry key="..\:/Users/pashh/AndroidStudioProjects/Paint/app/src/main/res/drawable-anydpi/ic_draw.xml" value="0.2425" />
+        <entry key="..\:/Users/pashh/AndroidStudioProjects/Paint/app/src/main/res/drawable-anydpi/ic_open.xml" value="0.197" />
         <entry key="..\:/Users/pashh/AndroidStudioProjects/Paint/app/src/main/res/drawable-anydpi/ic_save.xml" value="0.2425" />
         <entry key="..\:/Users/pashh/AndroidStudioProjects/Paint/app/src/main/res/drawable-anydpi/ic_undo.xml" value="0.2425" />
         <entry key="..\:/Users/pashh/AndroidStudioProjects/Paint/app/src/main/res/drawable/custom_imgbutton.xml" value="0.2425" />
+        <entry key="..\:/Users/pashh/AndroidStudioProjects/Paint/app/src/main/res/drawable/custom_list_view.xml" value="0.197" />
         <entry key="..\:/Users/pashh/AndroidStudioProjects/Paint/app/src/main/res/drawable/custom_obj_button.xml" value="0.126" />
         <entry key="..\:/Users/pashh/AndroidStudioProjects/Paint/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/pashh/AndroidStudioProjects/Paint/app/src/main/res/layout/list_item.xml" value="0.3625" />
